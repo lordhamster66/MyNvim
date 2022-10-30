@@ -141,14 +141,6 @@ local mappings = {
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 	},
-
-	s = {
-		name = "Split Window",
-        ["-"] = { "<C-w>s", "Horizontal" },
-		["|"] = { "<C-w>v", "Vertical" },
-		e = { "<C-w>=", "Equal" },
-		x = { ":close<CR>", "Close" },
-	},
 	t = {
 		name = "Typescript",
 		o = { ":TypescriptOrganizeImports<CR>", "Organize imports" },
