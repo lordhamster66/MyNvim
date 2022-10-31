@@ -14,6 +14,9 @@ keymap.set("i", "jk", "<ESC>")
 keymap.set("n", "x", '"_x')
 keymap.set("n", "c", '"_c')
 
+-- Select all
+keymap.set('n', '<C-a>', 'gg<S-v>G')
+
 -- Buffer Switch
 keymap.set("n", "H", ":BufferLineCyclePrev<CR>")
 keymap.set("n", "L", ":BufferLineCycleNext<CR>")
