@@ -32,15 +32,15 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
-    -- theme
-    use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+	-- theme
+	use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
 
 	-- essential plugins
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 	use("moll/vim-bbye") -- Bdelete
 	use("folke/which-key.nvim")
 	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
-	use("goolord/alpha-nvim")  -- home
+	use("goolord/alpha-nvim") -- home
 
 	-- commenting with gc
 	use("numToStr/Comment.nvim")
