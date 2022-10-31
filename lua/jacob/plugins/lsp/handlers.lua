@@ -22,10 +22,8 @@ M.setup = function()
 	end
 
 	local config = {
-		virtual_text = true, -- disable virtual text
-		signs = {
-			active = signs, -- show signs
-		},
+		virtual_text = false, -- disable virtual text
+		signs = { active = signs },
 		update_in_insert = true,
 		underline = true,
 		severity_sort = true,
@@ -72,11 +70,7 @@ M.on_attach = function(client, bufnr)
 	end
 
 	lsp_keymaps(bufnr)
-	local status_ok, illuminate = pcall(require, "illuminate")
-	if not status_ok then
-		return
+
 	end
-	illuminate.on_attach(client)
-end
 
 return M
