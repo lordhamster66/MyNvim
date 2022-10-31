@@ -15,4 +15,14 @@ saga.init_lsp_saga({
 	definition_action_keys = {
 		edit = "<CR>",
 	},
+	-- same as nvim-lightbulb but async
+	code_action_lightbulb = {
+		enable = true,
+		enable_in_insert = true,
+		cache_code_action = true,
+		sign = false,
+		update_time = 150,
+		sign_priority = 20,
+		virtual_text = true,
+	},
 })
