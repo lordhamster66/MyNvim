@@ -12,7 +12,7 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.prettier,
-		formatting.black.with({ extra_args = { "--fast" } }),
+		formatting.black.with({ extra_args = { "--fast", "--skip-string-normalization" } }),
 		formatting.stylua,
 		formatting.stylelint,
 		diagnostics.stylelint,
