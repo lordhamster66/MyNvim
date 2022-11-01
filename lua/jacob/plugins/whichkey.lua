@@ -1,4 +1,4 @@
-local status_ok, which_key = pcall(require, "which-key")
+local status_ok, wk = pcall(require, "which-key")
 if not status_ok then
 	return
 end
@@ -43,7 +43,7 @@ local setup = {
 		scroll_up = "<c-u>", -- binding to scroll up inside the popup
 	},
 	window = {
-		border = "rounded", -- none, single, double, shadow
+		border = "double", -- none, single, double, shadow
 		position = "bottom", -- bottom, top
 		margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
 		padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
@@ -53,11 +53,12 @@ local setup = {
 		height = { min = 4, max = 25 }, -- min and max height of the columns
 		width = { min = 20, max = 50 }, -- min and max width of the columns
 		spacing = 3, -- spacing between columns
-		align = "left", -- align columns left, center or right
+		align = "center", -- align columns left, center or right
 	},
 	ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
 	hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
 	show_help = true, -- show help message on the command line when the popup is visible
+    show_keys = true, -- show the currently pressed key and its label as a message in the command line
 	triggers = "auto", -- automatically setup triggers
 	-- triggers = {"<leader>"} -- or specify a list manually
 	triggers_blacklist = {
@@ -101,7 +102,6 @@ local mappings = {
 		c = { "<cmd>Telescope grep_string<cr>", "String under cursor" }, -- find string under cursor in current working directory
 		h = { "<cmd>Telescope help_tags<cr>", "Help" }, -- list available help tags
 	},
-
 	p = {
 		name = "Packer",
 		c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -110,10 +110,8 @@ local mappings = {
 		S = { "<cmd>PackerStatus<cr>", "Status" },
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
 	},
-
 	g = {
 		name = "Git",
-		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -127,7 +125,6 @@ local mappings = {
 		c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 		d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
 	},
-
 	l = {
 		name = "LSP",
 		a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
@@ -149,5 +146,5 @@ local mappings = {
 	},
 }
 
-which_key.setup(setup)
-which_key.register(mappings, opts)
+wk.setup(setup)
+wk.register(mappings, opts)
