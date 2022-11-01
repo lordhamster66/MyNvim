@@ -21,8 +21,8 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 keymap.set("n", "<C-u>", "9k")
 keymap.set("n", "<C-d>", "9j")
 
--- Window
-keymap.set("n", "s|", ":vsp<CR>")
+-- Split Window
+keymap.set("n", "s\\", ":vsp<CR>")
 keymap.set("n", "s-", ":sp<CR>")
 keymap.set("n", "sc", "<C-w>c")
 keymap.set("n", "so", "<C-w>o")
