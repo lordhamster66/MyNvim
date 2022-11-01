@@ -61,3 +61,9 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
 opt.iskeyword:append("-") -- consider string-string as whole word
+
+vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+	pattern = { "*" },
+	command = "silent! wall",
+	nested = true,
+})
