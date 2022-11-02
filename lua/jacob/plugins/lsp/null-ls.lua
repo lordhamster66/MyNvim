@@ -13,8 +13,9 @@ null_ls.setup({
 	sources = {
 		formatting.prettier,
 		formatting.black.with({ extra_args = { "--fast", "--skip-string-normalization" } }),
+		formatting.isort, -- Python utility / library to sort imports alphabetically and automatically separate them into sections and by type.
 		formatting.stylua,
-        diagnostics.eslint,
+		diagnostics.eslint,
 		formatting.stylelint,
 		diagnostics.stylelint,
 	},
