@@ -15,8 +15,9 @@ null_ls.setup({
 		formatting.black.with({ extra_args = { "--fast", "--skip-string-normalization" } }),
 		formatting.isort, -- Python utility / library to sort imports alphabetically and automatically separate them into sections and by type.
 		formatting.stylua,
-		diagnostics.eslint,
 		formatting.stylelint,
+		diagnostics.eslint,
 		diagnostics.stylelint,
+		diagnostics.mypy, -- Mypy is an optional static type checker for Python that aims to combine the benefits of dynamic (or "duck") typing and static typing.
 	},
 })
