@@ -18,6 +18,6 @@ null_ls.setup({
 		formatting.stylelint,
 		diagnostics.eslint,
 		diagnostics.stylelint,
-		diagnostics.mypy, -- Mypy is an optional static type checker for Python that aims to combine the benefits of dynamic (or "duck") typing and static typing.
+		-- diagnostics.mypy, -- Mypy is an optional static type checker for Python that aims to combine the benefits of dynamic (or "duck") typing and static typing.
 	},
 })
