@@ -31,9 +31,6 @@ keymap.set("n", "so", "<C-w>o")
 -- Plugin Keybinds
 ----------------------
 
--- restart lsp server (not on youtube nvim video)
-keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
-
 -- Buffer Switch
 keymap.set("n", "H", ":BufferLineCyclePrev<CR>")
 keymap.set("n", "L", ":BufferLineCycleNext<CR>")
