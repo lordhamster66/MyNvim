@@ -7,7 +7,7 @@ end
 -- configure treesitter
 treesitter.setup({
 	-- enable syntax highlighting
-	highlight = { enable = true },
+	highlight = { enable = true, disable = { "lua" } },
 	-- enable indentation
 	indent = { enable = true },
 	-- enable autotagging (w/ nvim-ts-autotag plugin)
@@ -30,4 +30,6 @@ treesitter.setup({
 	},
 	-- auto install above language parsers
 	auto_install = true,
+	-- Install parsers synchronously (only applied to `ensure_installed`)
+	sync_install = true,
 })

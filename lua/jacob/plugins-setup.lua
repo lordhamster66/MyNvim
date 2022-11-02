@@ -89,10 +89,7 @@ return packer.startup(function(use)
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
 	-- treesitter configuration
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		commit = "7709eb4b47b8ee19e760aa2771c5735fda2798e1",
-	})
+	use({ "nvim-treesitter/nvim-treesitter" })
 
 	-- auto closing
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
