@@ -58,7 +58,7 @@ local setup = {
 	ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
 	hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
 	show_help = true, -- show help message on the command line when the popup is visible
-    show_keys = true, -- show the currently pressed key and its label as a message in the command line
+	show_keys = true, -- show the currently pressed key and its label as a message in the command line
 	triggers = "auto", -- automatically setup triggers
 	-- triggers = {"<leader>"} -- or specify a list manually
 	triggers_blacklist = {
@@ -94,10 +94,7 @@ local mappings = {
 
 	f = {
 		name = "File",
-		f = {
-			"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-			"Find files",
-		},
+		f = { "<cmd>Telescope find_files<cr>", "Find files" },
 		s = { "<cmd>Telescope live_grep<cr>", "String Search" }, -- find string in current working directory as you type
 		c = { "<cmd>Telescope grep_string<cr>", "String under cursor" }, -- find string under cursor in current working directory
 		h = { "<cmd>Telescope help_tags<cr>", "Help" }, -- list available help tags
