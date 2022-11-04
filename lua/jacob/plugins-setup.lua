@@ -13,12 +13,12 @@ local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
 -- autocommand that reloads neovim and installs/updates/removes plugins
 -- when file is saved
-vim.cmd([[ 
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
-  augroup end
-]])
+-- vim.cmd([[
+--   augroup packer_user_config
+--     autocmd!
+--     autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
+--   augroup end
+-- ]])
 
 -- import packer safely
 local status, packer = pcall(require, "packer")
@@ -33,12 +33,9 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
 	-- theme
-	use("ellisonleao/gruvbox.nvim")
-	use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
 	use("folke/tokyonight.nvim")
 
 	-- essential plugins
-	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 	use("moll/vim-bbye") -- Bdelete
 	use("folke/which-key.nvim")
 	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
@@ -92,7 +89,7 @@ return packer.startup(function(use)
 
 	-- treesitter configuration
 	use("nvim-treesitter/nvim-treesitter")
-	use("nvim-treesitter/nvim-treesitter-context")  -- sticky header
+	use("nvim-treesitter/nvim-treesitter-context") -- sticky header
 
 	-- auto closing
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
@@ -102,7 +99,7 @@ return packer.startup(function(use)
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
 	-- hop EasyMotion-like
-	use({ "phaazon/hop.nvim", branch = "v2" })
+	-- use({ "phaazon/hop.nvim", branch = "v2" })
 
 	if packer_bootstrap then
 		require("packer").sync()
