@@ -101,6 +101,9 @@ return packer.startup(function(use)
 	-- hop EasyMotion-like
 	use({ "phaazon/hop.nvim", branch = "v2" })
 
+	-- For CSS color
+	use("NvChad/nvim-colorizer.lua")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
