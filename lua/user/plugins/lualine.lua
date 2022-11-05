@@ -91,8 +91,8 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = lualine_nightfly,
-		-- theme = "auto",
+		-- theme = lualine_nightfly,
+		theme = "tokyonight",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
