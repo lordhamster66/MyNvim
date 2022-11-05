@@ -11,4 +11,4 @@ require("user.plugins.comment")
 require("user.plugins.gitsigns")
 require("user.plugins.whichkey")
 require("user.plugins.hop")
-require("colorizer").setup() -- for css color #fff
+require("user.plugins.colorizer")
