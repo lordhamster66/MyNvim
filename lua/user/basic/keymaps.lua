@@ -36,3 +36,8 @@ keymap.set("n", "sl", "<C-w>l")
 -- Buffer Switch
 keymap.set("n", "H", ":BufferLineCyclePrev<CR>")
 keymap.set("n", "L", ":BufferLineCycleNext<CR>")
+
+-- Hop (like easymotion)
+keymap.set("n", "f", "<cmd>HopChar1<CR>")
+keymap.set("n", "<leader><leader>l", "<cmd>HopLineStart<CR>")
+keymap.set("n", "<leader><leader>w", "<cmd>HopWord<CR>")

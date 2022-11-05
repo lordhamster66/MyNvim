@@ -7,9 +7,6 @@ opt.fileencoding = "utf-8"
 opt.scrolloff = 8
 opt.sidescrolloff = 8
 
--- 右侧参考线，超过表示代码太长了，考虑换行
-opt.colorcolumn = "80"
-
 -- 禁止创建备份文件
 opt.backup = false
 opt.writebackup = false
