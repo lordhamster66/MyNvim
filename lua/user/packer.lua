@@ -51,7 +51,7 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 
 	-- bufferline
-	use({ "akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons" })
+	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "kyazdani42/nvim-web-devicons" })
 
 	-- statusline
 	use("nvim-lualine/lualine.nvim")

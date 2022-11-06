@@ -3,9 +3,13 @@ local opt = vim.opt -- for conciseness
 -- utf8
 opt.encoding = "UTF-8"
 opt.fileencoding = "utf-8"
+
 -- jk移动时光标下上方保留8行
 opt.scrolloff = 8
 opt.sidescrolloff = 8
+
+-- Mouse stuf
+opt.mousemoveevent = true
 
 -- 禁止创建备份文件
 opt.backup = false
