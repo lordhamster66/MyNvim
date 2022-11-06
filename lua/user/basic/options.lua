@@ -59,6 +59,9 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 opt.iskeyword:append("-") -- consider string-string as whole word
 
+-- status line
+opt.winbar = "%=%f"
+
 
 -- Auto save
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
