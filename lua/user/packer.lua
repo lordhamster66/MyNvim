@@ -99,7 +99,7 @@ return packer.startup(function(use)
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
 	-- hop EasyMotion-like
-	use({ "phaazon/hop.nvim", branch = "v2" })
+	-- use({ "phaazon/hop.nvim", branch = "v2" })
 
 	-- For CSS color
 	use("NvChad/nvim-colorizer.lua")

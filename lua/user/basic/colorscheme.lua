@@ -22,3 +22,5 @@ if not status then
 	print("Colorscheme not found!") -- print error if colorscheme not installed
 	return
 end
+
+vim.cmd("hi LineNr guifg=#fff")  -- highlight linenumber
