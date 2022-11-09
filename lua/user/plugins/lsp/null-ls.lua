@@ -11,13 +11,13 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier,
+		formatting.prettier.with({ disabled_filetypes = { "css", "css" } }),
 		formatting.black.with({ extra_args = { "--fast", "--skip-string-normalization" } }),
 		formatting.isort, -- Python utility / library to sort imports alphabetically and automatically separate them into sections and by type.
 		formatting.stylua,
-		formatting.stylelint,
+		formatting.stylelint.with({ filetypes = { "css", "scss" } }),
+		diagnostics.stylelint.with({ filetypes = { "css", "scss" } }),
 		diagnostics.eslint,
-		diagnostics.stylelint,
 		-- diagnostics.mypy, -- Mypy is an optional static type checker for Python that aims to combine the benefits of dynamic (or "duck") typing and static typing.
 	},
 })
