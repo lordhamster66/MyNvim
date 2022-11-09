@@ -60,8 +60,7 @@ opt.splitbelow = true -- split horizontal window to the bottom
 opt.iskeyword:append("-") -- consider string-string as whole word
 
 -- status line
-opt.winbar = "%=%f"
-
+opt.winbar = "%=%t"
 
 -- Auto save
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
@@ -72,11 +71,11 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
 
 -- Restore cursor position
 vim.api.nvim_create_autocmd("BufReadPost", {
-    pattern = "*",
-    callback = function()
-        if vim.fn.line("'\"") > 0 and vim.fn.line("'\"") <= vim.fn.line("$") then
-            vim.fn.setpos(".", vim.fn.getpos("'\""))
-            vim.cmd("silent! foldopen")
-        end
-    end,
+	pattern = "*",
+	callback = function()
+		if vim.fn.line("'\"") > 0 and vim.fn.line("'\"") <= vim.fn.line("$") then
+			vim.fn.setpos(".", vim.fn.getpos("'\""))
+			vim.cmd("silent! foldopen")
+		end
+	end,
 })
