@@ -15,9 +15,6 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
--- set termguicolors to enable highlight groups
-vim.opt.termguicolors = true
-
 -- change color for arrows in tree to light blue
 vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 
@@ -51,18 +48,9 @@ nvimtree.setup({
 			},
 		},
 	},
-	diagnostics = {
-		enable = false,
-		show_on_dirs = false,
-		icons = {
-			hint = "",
-			info = "",
-			warning = "",
-			error = "",
-		},
-	},
+	diagnostics = { enable = false },
 	view = {
-        adaptive_size = true,
+		adaptive_size = true,
 		-- width = 30,
 		-- side = "left",
 		mappings = {
