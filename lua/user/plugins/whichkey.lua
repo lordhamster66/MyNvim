@@ -94,34 +94,30 @@ local mappings = {
 
 	f = {
 		name = "File",
-		f = { "<cmd>Telescope find_files<cr>", "Find files" },
-		s = { "<cmd>Telescope live_grep<cr>", "String Search" }, -- find string in current working directory as you type
-		c = { "<cmd>Telescope grep_string<cr>", "String under cursor" }, -- find string under cursor in current working directory
+		f = {
+			"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{winblend = 10})<cr>",
+			"Find files",
+		},
+		g = { "<cmd>Telescope live_grep<cr>", "Live Grep" }, -- find string in current working directory as you type
 		h = { "<cmd>Telescope help_tags<cr>", "Help" }, -- list available help tags
 	},
 	p = {
 		name = "Packer",
+		i = { "<cmd>PackerInstall<cr>", "Install" },
+		u = { "<cmd>PackerUpdate<cr>", "Update" },
+		s = { "<cmd>PackerSync<cr>", "Sync" },
 		c = { "<cmd>PackerClean<cr>", "Clean" },
 		C = { "<cmd>PackerCompile<cr>", "Compile" },
-		i = { "<cmd>PackerInstall<cr>", "Install" },
-		s = { "<cmd>PackerSync<cr>", "Sync" },
 		S = { "<cmd>PackerStatus<cr>", "Status" },
-		u = { "<cmd>PackerUpdate<cr>", "Update" },
 	},
 	g = {
 		name = "Git",
+		b = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+		r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
 		p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-		r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 		R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-		s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-		u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
-		o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-		d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
 	},
 	l = {
 		name = "LSP",

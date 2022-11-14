@@ -18,6 +18,12 @@ vim.g.loaded_netrwPlugin = 1
 -- change color for arrows in tree to light blue
 vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 
+-- float window position
+local gwidth = vim.api.nvim_list_uis()[1].width
+local gheight = vim.api.nvim_list_uis()[1].height
+local width = 100
+local height = 50
+
 -- configure nvim-tree
 nvimtree.setup({
 	renderer = {
@@ -50,11 +56,11 @@ nvimtree.setup({
 	},
 	diagnostics = { enable = false },
 	view = {
-		adaptive_size = true,
-        centralize_selection=true,
-        preserve_window_proportions=true,
-        -- number=true,
-        -- relativenumber=true,
+		-- adaptive_size = true,
+		centralize_selection = true,
+		-- preserve_window_proportions = true,
+		-- number=true,
+		-- relativenumber=true,
 		mappings = {
 			list = {
 				{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
@@ -62,10 +68,18 @@ nvimtree.setup({
 				{ key = "v", cb = tree_cb("vsplit") },
 			},
 		},
-		float ={
-		    enable = true,
-		    quit_on_focus_loss=true,
-		}
+		float = {
+			enable = true,
+			-- quit_on_focus_loss = true,
+			open_win_config = {
+				relative = "editor",
+                border="rounded",
+				width = width,
+				height = height,
+				row = (gheight - height) * 0.5,
+				col = (gwidth - width) * 0.5,
+			},
+		},
 	},
 
 	-- disable window_picker for
