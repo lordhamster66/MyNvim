@@ -51,8 +51,10 @@ nvimtree.setup({
 	diagnostics = { enable = false },
 	view = {
 		adaptive_size = true,
-		-- width = 30,
-		-- side = "left",
+        centralize_selection=true,
+        preserve_window_proportions=true,
+        -- number=true,
+        -- relativenumber=true,
 		mappings = {
 			list = {
 				{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
@@ -60,6 +62,10 @@ nvimtree.setup({
 				{ key = "v", cb = tree_cb("vsplit") },
 			},
 		},
+		float ={
+		    enable = true,
+		    quit_on_focus_loss=true,
+		}
 	},
 
 	-- disable window_picker for
@@ -67,6 +73,7 @@ nvimtree.setup({
 	-- window splits
 	actions = {
 		open_file = {
+			quit_on_open = true,
 			window_picker = {
 				enable = false,
 			},
