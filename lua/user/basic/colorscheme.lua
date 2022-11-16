@@ -3,7 +3,7 @@ local setup, theme = pcall(require, "tokyonight")
 if setup then
 	theme.setup({
 		style = "moon", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-		transparent = false, -- Enable this to disable setting the background color
+		transparent = true, -- Enable this to disable setting the background color
 		terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
 		styles = {
 			comments = { italic = true },
@@ -23,4 +23,4 @@ if not status then
 	return
 end
 
-vim.cmd("hi LineNr guifg=#fff")  -- highlight linenumber
+vim.cmd("hi LineNr guifg=#fff") -- highlight linenumber
