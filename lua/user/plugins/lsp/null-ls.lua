@@ -19,5 +19,6 @@ null_ls.setup({
 		diagnostics.stylelint.with({ filetypes = { "css", "scss" } }),
 		diagnostics.eslint,
 		-- diagnostics.mypy, -- Mypy is an optional static type checker for Python that aims to combine the benefits of dynamic (or "duck") typing and static typing.
+        require("typescript.extensions.null-ls.code-actions"),
 	},
 })

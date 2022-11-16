@@ -132,12 +132,6 @@ local mappings = {
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 	},
-	t = {
-		name = "Typescript",
-		o = { ":TypescriptOrganizeImports<CR>", "Organize imports" },
-		u = { ":TypescriptRemoveUnused<CR>", "Remove unused variables" },
-		r = { ":TypescriptRenameFile<CR>", "Rename file and update imports" },
-	},
 }
 
 wk.setup(setup)
