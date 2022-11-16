@@ -1,6 +1,6 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local servers = {
-    "emmet_ls",
+	"emmet_ls",
 	"sumneko_lua",
 	"cssls",
 	"html",
@@ -10,6 +10,7 @@ local servers = {
 	"jsonls",
 	"yamlls",
 	"angularls",
+	"astro",
 }
 
 local settings = {
