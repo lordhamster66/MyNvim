@@ -104,6 +104,8 @@ return packer.startup(function(use)
 	-- For CSS color
 	use("NvChad/nvim-colorizer.lua")
 
+	use("lukas-reineke/indent-blankline.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

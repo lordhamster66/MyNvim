@@ -11,6 +11,10 @@ opt.sidescrolloff = 8
 -- Mouse stuf
 opt.mousemoveevent = true
 
+opt.list = true
+-- opt.listchars:append("space:⋅")
+-- opt.listchars:append("eol:↴")
+
 -- 禁止创建备份文件
 opt.backup = false
 opt.writebackup = false
