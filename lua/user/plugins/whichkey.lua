@@ -83,10 +83,10 @@ local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
-	["q"] = { ":qa<CR>", "Quit Nvim" },
+	["q"] = { "<cmd>:qa<CR>", "Quit Nvim" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["o"] = { "<cmd>LSoutlineToggle<CR>", "Outline" },
-	["x"] = { ":Bdelete!<CR>", "Close Buffer" },
+	["x"] = { "<cmd>:Bdelete!<CR>", "Close Buffer" },
 	["b"] = {
 		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"List Buffer",
@@ -121,7 +121,7 @@ local mappings = {
 	},
 	l = {
 		name = "LSP",
-		R = { ":LspRestart<CR>", "Restart LSP" },
+		R = { "<cmd>LspRestart<CR>", "Restart LSP" },
 		a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
 		d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
 		w = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
