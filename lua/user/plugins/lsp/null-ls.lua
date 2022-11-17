@@ -13,12 +13,13 @@ null_ls.setup({
 	sources = {
 		formatting.prettier.with({ disabled_filetypes = { "css", "css" } }),
 		formatting.black.with({ extra_args = { "--fast", "--skip-string-normalization" } }),
-		formatting.isort, -- Python utility / library to sort imports alphabetically and automatically separate them into sections and by type.
+		-- formatting.isort, -- Python utility / library to sort imports alphabetically and automatically separate them into sections and by type.
+		formatting.reorder_python_imports,
 		formatting.stylua,
 		formatting.stylelint.with({ filetypes = { "css", "scss" } }),
 		diagnostics.stylelint.with({ filetypes = { "css", "scss" } }),
 		diagnostics.eslint,
-		-- diagnostics.mypy, -- Mypy is an optional static type checker for Python that aims to combine the benefits of dynamic (or "duck") typing and static typing.
-        require("typescript.extensions.null-ls.code-actions"),
+		diagnostics.mypy, -- Mypy is an optional static type checker for Python that aims to combine the benefits of dynamic (or "duck") typing and static typing.
+		require("typescript.extensions.null-ls.code-actions"),
 	},
 })
