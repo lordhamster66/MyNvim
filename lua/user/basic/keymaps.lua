@@ -19,15 +19,15 @@ keymap.set("n", "<C-u>", "9k")
 keymap.set("n", "<C-d>", "9j")
 
 -- Window
-keymap.set("n", "s\\", ":vsp<CR>")
-keymap.set("n", "s-", ":sp<CR>")
-keymap.set("n", "sc", "<C-w>c")
-keymap.set("n", "so", "<C-w>o")
-keymap.set("n", "sw", "<C-w>w")
-keymap.set("n", "sk", "<C-w>k")
-keymap.set("n", "sj", "<C-w>j")
-keymap.set("n", "sh", "<C-w>h")
-keymap.set("n", "sl", "<C-w>l")
+keymap.set("n", "<C-w>\\", ":vsp<CR>")
+keymap.set("n", "<C-w>-", ":sp<CR>")
+-- keymap.set("n", "sc", "<C-w>c")
+-- keymap.set("n", "so", "<C-w>o")
+-- keymap.set("n", "sw", "<C-w>w")
+-- keymap.set("n", "sk", "<C-w>k")
+-- keymap.set("n", "sj", "<C-w>j")
+-- keymap.set("n", "sh", "<C-w>h")
+-- keymap.set("n", "sl", "<C-w>l")
 
 ----------------------
 -- Plugin Keybinds
