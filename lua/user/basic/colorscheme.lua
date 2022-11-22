@@ -23,3 +23,4 @@ if not status then
 	return
 end
 
+vim.cmd("hi LineNr guifg=#fff")

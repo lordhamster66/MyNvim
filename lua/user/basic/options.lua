@@ -80,5 +80,3 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 		end
 	end,
 })
-
--- vim.cmd("hi LineNr guifg=#fff")
