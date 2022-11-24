@@ -96,9 +96,10 @@ local mappings = {
 		name = "File",
 		f = {
 			"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{winblend = 10})<cr>",
-			"Find files",
+			"  Find file",
 		},
-		g = { "<cmd>Telescope live_grep<cr>", "Live Grep" }, -- find string in current working directory as you type
+		g = { "<cmd>Telescope live_grep<cr>", "  Find text" }, -- find string in current working directory as you type
+		r = { "<cmd>Telescope oldfiles <cr>", "  Recently used files" },
 		h = { "<cmd>Telescope help_tags<cr>", "Help" }, -- list available help tags
 	},
 	p = {
