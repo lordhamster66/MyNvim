@@ -87,11 +87,15 @@ local mappings = {
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["o"] = { "<cmd>LSoutlineToggle<CR>", "Outline" },
 	["x"] = { "<cmd>:Bdelete!<CR>", "Close Buffer" },
-	["b"] = {
-		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"List Buffer",
-	},
 
+	b = {
+		name = "Buffer",
+		b = { "<cmd>%bd|e#|bd#<CR>", "Close all buffer except this one!" },
+		l = {
+			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+			"List Buffer",
+		},
+	},
 	f = {
 		name = "File",
 		f = {
