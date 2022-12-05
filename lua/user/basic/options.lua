@@ -20,6 +20,10 @@ opt.backup = false
 opt.writebackup = false
 opt.swapfile = false
 
+-- For fold
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+
 -- 补全增强
 -- vim.o.wildmenu = true
 

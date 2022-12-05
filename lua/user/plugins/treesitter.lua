@@ -34,3 +34,9 @@ treesitter.setup({
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = true,
 })
+
+local s, _ = pcall(vim.cmd, "set nofoldenable")
+if not s then
+	print("set nofoldenable error")
+	return
+end
