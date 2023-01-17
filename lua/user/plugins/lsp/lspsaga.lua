@@ -4,7 +4,7 @@ if not saga_status then
 	return
 end
 
-saga.init_lsp_saga({
+saga.setup({
 	-- keybinds for navigation in lspsaga window
 	move_in_saga = { prev = "<C-k>", next = "<C-j>" },
 	-- use enter to open file with finder
@@ -16,7 +16,7 @@ saga.init_lsp_saga({
 		edit = "<CR>",
 	},
 	-- same as nvim-lightbulb but async
-	code_action_lightbulb = {
+	lightbulb = {
 		enable = true,
 		enable_in_insert = true,
 		cache_code_action = true,
