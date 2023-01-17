@@ -11,7 +11,7 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier.with({ disabled_filetypes = { "css", "css" } }),
+		formatting.prettier.with({ disabled_filetypes = { "css", "scss" } }),
 		formatting.black.with({ extra_args = { "--fast", "--skip-string-normalization" } }),
 		-- formatting.isort, -- Python utility / library to sort imports alphabetically and automatically separate them into sections and by type.
 		formatting.reorder_python_imports,
