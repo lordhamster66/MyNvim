@@ -73,7 +73,7 @@ nvimtree.setup({
 			-- quit_on_focus_loss = true,
 			open_win_config = {
 				relative = "editor",
-                border="rounded",
+				border = "rounded",
 				width = width,
 				height = height,
 				row = (gheight - height) * 0.5,
