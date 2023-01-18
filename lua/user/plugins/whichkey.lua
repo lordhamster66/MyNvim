@@ -85,7 +85,7 @@ local mappings = {
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>:qa<CR>", "Quit Nvim" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	["o"] = { "<cmd>LSoutlineToggle<CR>", "Outline" },
+	["o"] = { "<cmd>Lspsaga outline<CR>", "Outline" },
 	["x"] = { "<cmd>:bdelete!<CR>", "Close Buffer" },
 
 	b = {
