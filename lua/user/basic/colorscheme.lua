@@ -15,7 +15,7 @@ if setup then
 	})
 end
 
--- set colorscheme to nightfly with protected call
+-- set colorscheme with protected call
 -- in case it isn't installed
 local status, _ = pcall(vim.cmd, "colorscheme tokyonight-moon")
 if not status then
@@ -23,4 +23,8 @@ if not status then
 	return
 end
 
-vim.cmd("hi LineNr guifg=#fff")
+local highlight_linenumber, _ = pcall(vim.cmd, "hi LineNr guifg=#fff")
+if not highlight_linenumber then
+	print("Set linenumber highlight wrong!")
+	return
+end
