@@ -33,7 +33,8 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
 	-- theme
-	use("folke/tokyonight.nvim")
+	-- use("folke/tokyonight.nvim")
+	use("rebelot/kanagawa.nvim")
 
 	-- essential plugins
 	-- use("moll/vim-bbye") -- Bdelete

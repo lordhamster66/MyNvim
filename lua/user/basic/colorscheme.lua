@@ -1,23 +1,29 @@
--- https://github.com/folke/tokyonight.nvim
-local setup, theme = pcall(require, "tokyonight")
+-- https://github.com/rebelot/kanagawa.nvim
+local setup, theme = pcall(require, "kanagawa")
 if setup then
 	theme.setup({
-		style = "moon", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-		transparent = true, -- Enable this to disable setting the background color
-		terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
-		styles = {
-			comments = { italic = true },
-			keywords = { italic = true },
-			functions = { bold = true },
-			variables = { bold = true },
-		},
-		hide_inactive_statusline = true, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
+		undercurl = true, -- enable undercurls
+		commentStyle = { italic = true },
+		functionStyle = {},
+		keywordStyle = { italic = true },
+		statementStyle = { bold = true },
+		typeStyle = {},
+		variablebuiltinStyle = { italic = true },
+		specialReturn = true, -- special highlight for the return keyword
+		specialException = true, -- special highlight for exception handling keywords
+		transparent = true, -- do not set background color
+		dimInactive = true, -- dim inactive window `:h hl-NormalNC`
+		globalStatus = false, -- adjust window separators highlight for laststatus=3
+		terminalColors = true, -- define vim.g.terminal_color_{0,17}
+		colors = {},
+		overrides = {},
+		theme = "default", -- Load "default" theme or the experimental "light" theme
 	})
 end
 
 -- set colorscheme with protected call
 -- in case it isn't installed
-local status, _ = pcall(vim.cmd, "colorscheme tokyonight-moon")
+local status, _ = pcall(vim.cmd, "colorscheme kanagawa")
 if not status then
 	print("Colorscheme not found!") -- print error if colorscheme not installed
 	return
