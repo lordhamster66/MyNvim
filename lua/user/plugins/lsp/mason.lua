@@ -1,12 +1,11 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local servers = {
 	"emmet_ls",
-	"sumneko_lua",
+	"lua_ls",
 	"cssls",
 	"html",
 	"tsserver",
 	"pyright",
-	-- "pylsp",
 	"bashls",
 	"jsonls",
 	"yamlls",
