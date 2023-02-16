@@ -34,7 +34,6 @@ return packer.startup(function(use)
 
 	-- theme
 	-- use("folke/tokyonight.nvim")
-	use("rebelot/kanagawa.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- essential plugins
