@@ -11,6 +11,7 @@ local servers = {
 	"yamlls",
 	"angularls",
 	"astro",
+	"tailwindcss",
 }
 
 local settings = {
