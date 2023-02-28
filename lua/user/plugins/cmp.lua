@@ -4,28 +4,6 @@ if not cmp_status then
 	return
 end
 
--- import luasnip plugin safely
-local luasnip_status, luasnip = pcall(require, "luasnip")
-if not luasnip_status then
-	return
-end
-
--- -- import lspkind plugin safely
--- local lspkind_status, lspkind = pcall(require, "lspkind")
--- if not lspkind_status then
--- 	return
--- end
-
--- load vs-code like snippets from plugins (e.g. friendly-snippets)
-require("luasnip/loaders/from_vscode").lazy_load()
-
--- vim.opt.completeopt = "menu,menuone,noselect"
-
-local check_backspace = function()
-	local col = vim.fn.col(".") - 1
-	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
-end
-
 --   פּ ﯟ   some other good icons
 local kind_icons = {
 	Text = "",
