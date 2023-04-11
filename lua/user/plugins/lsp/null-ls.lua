@@ -16,7 +16,7 @@ null_ls.setup({
 		-- python
 		formatting.black.with({ extra_args = { "--fast", "--skip-string-normalization" } }),
 		formatting.reorder_python_imports,
-		diagnostics.mypy, -- Mypy is an optional static type checker for Python that aims to combine the benefits of dynamic (or "duck") typing and static typing.
+		-- diagnostics.mypy, -- Mypy is an optional static type checker for Python that aims to combine the benefits of dynamic (or "duck") typing and static typing.
 		-- lua
 		formatting.stylua,
 		-- javascript、typescript
