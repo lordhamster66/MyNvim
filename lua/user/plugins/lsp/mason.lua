@@ -1,17 +1,9 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local servers = {
-	"emmet_ls",
 	"lua_ls",
-	"cssls",
-	"html",
-	"tsserver",
 	"pyright",
-	"bashls",
 	"jsonls",
 	"yamlls",
-	"angularls",
-	"astro",
-	"tailwindcss",
 }
 
 local settings = {

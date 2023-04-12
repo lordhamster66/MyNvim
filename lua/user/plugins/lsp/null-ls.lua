@@ -11,17 +11,11 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		-- html、css、scss、javascript、typescript...
-		formatting.prettier,
 		-- python
 		formatting.black.with({ extra_args = { "--fast", "--skip-string-normalization" } }),
 		formatting.reorder_python_imports,
 		-- diagnostics.mypy, -- Mypy is an optional static type checker for Python that aims to combine the benefits of dynamic (or "duck") typing and static typing.
 		-- lua
 		formatting.stylua,
-		-- javascript、typescript
-		diagnostics.eslint,
-		-- typescript import order and organize
-		require("typescript.extensions.null-ls.code-actions"),
 	},
 })

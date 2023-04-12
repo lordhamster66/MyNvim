@@ -82,7 +82,6 @@ return packer.startup(function(use)
 	use("neovim/nvim-lspconfig") -- easily configure language servers
 	-- use("RRethy/vim-illuminate") -- automatically highlighting same words
 	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
-	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
@@ -101,9 +100,6 @@ return packer.startup(function(use)
 
 	-- Motion enhance
 	use("ggandor/leap.nvim")
-
-	-- For CSS color
-	use("NvChad/nvim-colorizer.lua")
 
 	use("lukas-reineke/indent-blankline.nvim")
 

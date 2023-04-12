@@ -1,3 +1,4 @@
+require("nvim-treesitter.install").compilers = { "clang" }
 -- import nvim-treesitter plugin safely
 local status, treesitter = pcall(require, "nvim-treesitter.configs")
 if not status then
@@ -16,19 +17,12 @@ treesitter.setup({
 	ensure_installed = {
 		"python",
 		"json",
-		"javascript",
-		"typescript",
 		"yaml",
-		"html",
-		"css",
 		"markdown",
 		"markdown_inline",
-		"bash",
 		"lua",
 		"vim",
-		"dockerfile",
 		"gitignore",
-		"astro",
 	},
 	-- auto install above language parsers
 	auto_install = true,
