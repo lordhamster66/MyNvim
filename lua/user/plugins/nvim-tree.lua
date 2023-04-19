@@ -1,15 +1,8 @@
 -- import nvim-tree plugin safely
-local setup, nvimtree = pcall(require, "nvim-tree")
-if not setup then
+local status, nvimtree = pcall(require, "nvim-tree")
+if not status then
 	return
 end
-
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-	return
-end
-
-local tree_cb = nvim_tree_config.nvim_tree_callback
 
 -- recommended settings from nvim-tree documentation
 vim.g.loaded = 1
@@ -24,8 +17,23 @@ local gheight = vim.api.nvim_list_uis()[1].height
 local width = 100
 local height = 50
 
+local function on_attach(bufnr)
+	local api = require("nvim-tree.api")
+
+	local function opts(desc)
+		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+	end
+	-- You will need to insert "your code goes here" for any mappings with a custom action_cb
+	vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
+	vim.keymap.set("n", "<CR>", api.node.open.edit, opts("Open"))
+	vim.keymap.set("n", "o", api.node.open.edit, opts("Open"))
+	vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
+	vim.keymap.set("n", "v", api.node.open.vertical, opts("Open: Vertical Split"))
+end
+
 -- configure nvim-tree
 nvimtree.setup({
+	on_attach = on_attach,
 	renderer = {
 		root_folder_modifier = ":t",
 		icons = {
@@ -61,13 +69,6 @@ nvimtree.setup({
 		-- preserve_window_proportions = true,
 		-- number=true,
 		-- relativenumber=true,
-		mappings = {
-			list = {
-				{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
-				{ key = "h", cb = tree_cb("close_node") },
-				{ key = "v", cb = tree_cb("vsplit") },
-			},
-		},
 		float = {
 			enable = true,
 			-- quit_on_focus_loss = true,
@@ -81,7 +82,6 @@ nvimtree.setup({
 			},
 		},
 	},
-
 	-- disable window_picker for
 	-- explorer to work well with
 	-- window splits
