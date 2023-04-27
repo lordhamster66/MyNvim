@@ -84,3 +84,16 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 		end
 	end,
 })
+
+-- 切换到英文输入法
+function switchToEnglish()
+	vim.fn.system("im-select com.apple.keylayout.ABC")
+end
+
+-- 进入 normal 模式时切换为英文输入法
+vim.cmd([[
+augroup input_method
+  autocmd!
+  autocmd InsertLeave * :lua switchToEnglish()
+augroup END
+]])
