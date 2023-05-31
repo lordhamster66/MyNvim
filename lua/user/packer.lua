@@ -33,11 +33,9 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
 	-- theme
-	-- use("folke/tokyonight.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- essential plugins
-	-- use("moll/vim-bbye") -- Bdelete
 	use("folke/which-key.nvim")
 	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
 	use("goolord/alpha-nvim") -- home
@@ -80,7 +78,7 @@ return packer.startup(function(use)
 
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig") -- easily configure language servers
-	-- use("RRethy/vim-illuminate") -- automatically highlighting same words
+	use("RRethy/vim-illuminate") -- automatically highlighting same words
 	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 
