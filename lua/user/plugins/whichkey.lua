@@ -103,8 +103,8 @@ local mappings = {
 			"Find file",
 		},
 		g = { "<cmd>Telescope live_grep<cr>", "Find text" }, -- find string in current working directory as you type
-		r = { "<cmd>Telescope oldfiles <cr>", "Recently used files" },
-		q = { "<cmd>Telescope quickfix <cr>", "Quickfix" },
+		r = { "<cmd>Telescope oldfiles<cr>", "Recently used files" },
+		q = { "<cmd>copen<cr>", "Quickfix" },
 		h = { "<cmd>Telescope help_tags<cr>", "Help" }, -- list available help tags
 	},
 	p = {
