@@ -14,6 +14,7 @@ local mappings = {
 	n = { -- normal mode
 		["l"] = actions.toggle_selection,
 		["L"] = actions.select_all,
+		["H"] = actions.drop_all,
 		["<C-q>"] = actions.smart_send_to_qflist,
 	},
 }
