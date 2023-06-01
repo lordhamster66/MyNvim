@@ -4,4 +4,10 @@ if not saga_status then
 	return
 end
 
-saga.setup({})
+saga.setup({
+	outline = {
+		keys = {
+			expand_or_jump = "l",
+		},
+	},
+})
