@@ -11,10 +11,18 @@ if not actions_setup then
 end
 
 local mappings = {
-	n = { -- normal mode
+	-- insert mode
+	i = {
+		["<C-j>"] = actions.move_selection_next,
+		["<C-k>"] = actions.move_selection_previous,
+	},
+	-- normal mode
+	n = {
 		["l"] = actions.toggle_selection,
 		["L"] = actions.select_all,
 		["H"] = actions.drop_all,
+		["<C-j>"] = actions.move_selection_next,
+		["<C-k>"] = actions.move_selection_previous,
 		["<C-q>"] = actions.smart_send_to_qflist,
 	},
 }
