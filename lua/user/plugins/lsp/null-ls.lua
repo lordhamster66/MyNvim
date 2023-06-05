@@ -1,5 +1,10 @@
-local null_ls_status_ok, null_ls = pcall(require, "null-ls")
-if not null_ls_status_ok then
+local null_ls_status, null_ls = pcall(require, "null-ls")
+if not null_ls_status then
+	return
+end
+
+local mason_null_ls_status, mason_null_ls = pcall(require, "mason-null-ls")
+if not mason_null_ls_status then
 	return
 end
 
@@ -17,6 +22,7 @@ null_ls.setup({
 		formatting.black.with({ extra_args = { "--fast", "--skip-string-normalization" } }),
 		formatting.reorder_python_imports,
 		-- diagnostics.mypy, -- Mypy is an optional static type checker for Python that aims to combine the benefits of dynamic (or "duck") typing and static typing.
+		diagnostics.ruff,
 		-- lua
 		formatting.stylua,
 		-- javascript、typescript
@@ -24,4 +30,15 @@ null_ls.setup({
 		-- typescript import order and organize
 		require("typescript.extensions.null-ls.code-actions"),
 	},
+})
+
+mason_null_ls.setup({
+	ensure_installed = {
+		"prettier",
+		"black",
+		"reorder_python_imports",
+		"ruff",
+		"stylua",
+	},
+	automatic_installation = true,
 })

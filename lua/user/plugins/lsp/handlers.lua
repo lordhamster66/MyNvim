@@ -59,27 +59,18 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "go", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 end
 
+local disableFormattingServers = {
+	["tsserver"] = true,
+	["lua_ls"] = true,
+	["html"] = true,
+	["cssls"] = true,
+	["jsonls"] = true,
+}
+
 M.on_attach = function(client, bufnr)
-	if client.name == "tsserver" then
+	if disableFormattingServers[client.name] then
 		client.server_capabilities.documentFormattingProvider = false
 	end
-
-	if client.name == "lua_ls" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
-
-	if client.name == "html" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
-
-	if client.name == "cssls" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
-
-	if client.name == "jsonls" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
-
 	lsp_keymaps(bufnr)
 end
 
