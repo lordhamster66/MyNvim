@@ -1,6 +1,6 @@
 require("user.plugins.lsp")
 require("user.plugins.cmp")
-require("user.plugins.snip").setup()
+require("user.plugins.snip")
 require("user.plugins.alpha")
 require("user.plugins.telescope")
 require("user.plugins.autopairs")
