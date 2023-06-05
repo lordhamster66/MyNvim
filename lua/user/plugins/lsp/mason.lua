@@ -3,6 +3,11 @@ if not lsp_handlers_status then
 	return
 end
 
+local lspconfig_status, lspconfig = pcall(require, "lspconfig")
+if not lspconfig_status then
+	return
+end
+
 local mason_status, mason = pcall(require, "mason")
 if not mason_status then
 	return
@@ -10,11 +15,6 @@ end
 
 local mason_lspconfig_status, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not mason_lspconfig_status then
-	return
-end
-
-local lspconfig_status, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status then
 	return
 end
 
@@ -63,23 +63,29 @@ mason_lspconfig.setup({
 	automatic_installation = true,
 })
 
+local opts = {}
+
 for _, server in pairs(servers) do
+	opts = {
+		on_attach = lsp_handlers.on_attach,
+		capabilities = lsp_handlers.capabilities,
+	}
+
 	server = vim.split(server, "@")[1]
 
 	local require_ok, conf_opts = pcall(require, "user.plugins.lsp.settings." .. server)
 	if require_ok then
-		lspconfig[server].setup(vim.tbl_deep_extend("force", conf_opts, {
-			on_attach = lsp_handlers.on_attach,
-			capabilities = lsp_handlers.capabilities,
-		}))
+		opts = vim.tbl_deep_extend("force", conf_opts, opts)
 	end
+
+	lspconfig[server].setup(opts)
 end
 
 -- configure typescript server with plugin
 typescript.setup({
 	server = {
-		capabilities = lsp_handlers.capabilities,
 		on_attach = lsp_handlers.on_attach,
+		capabilities = lsp_handlers.capabilities,
 	},
 })
 
