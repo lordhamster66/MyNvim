@@ -89,6 +89,7 @@ return packer.startup(function(use)
 	-- treesitter configuration
 	use("nvim-treesitter/nvim-treesitter")
 	use("nvim-treesitter/nvim-treesitter-context") -- sticky header
+	use("HiPhish/nvim-ts-rainbow2")
 
 	-- auto closing
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...

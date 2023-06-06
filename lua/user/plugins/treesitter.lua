@@ -1,6 +1,13 @@
 -- import nvim-treesitter plugin safely
 local status, treesitter = pcall(require, "nvim-treesitter.configs")
 if not status then
+	print("nvim-treesitter not installed!")
+	return
+end
+
+local rainbow_status, _ = pcall(require, "ts-rainbow")
+if not rainbow_status then
+	print("ts-rainbow not installed!")
 	return
 end
 
@@ -34,6 +41,15 @@ treesitter.setup({
 	auto_install = true,
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = true,
+	rainbow = {
+		enable = true,
+		-- list of languages you want to disable the plugin for
+		disable = { "jsx", "cpp", "html" },
+		-- Which query to use for finding delimiters
+		query = "rainbow-parens",
+		-- Highlight the entire buffer all at once
+		strategy = require("ts-rainbow").strategy.global,
+	},
 })
 
 local s, _ = pcall(vim.cmd, "set nofoldenable")
