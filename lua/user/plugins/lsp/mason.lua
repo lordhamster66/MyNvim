@@ -8,12 +8,12 @@ if not lspconfig_status then
 	return
 end
 
-local mason_status, mason = pcall(require, "mason")
+local mason_status, _ = pcall(require, "mason")
 if not mason_status then
 	return
 end
 
-local mason_lspconfig_status, mason_lspconfig = pcall(require, "mason-lspconfig")
+local mason_lspconfig_status, _ = pcall(require, "mason-lspconfig")
 if not mason_lspconfig_status then
 	return
 end
@@ -35,7 +35,7 @@ local settings = {
 	log_level = vim.log.levels.INFO,
 	max_concurrent_installers = 4,
 }
-mason.setup(settings)
+require("mason").setup(settings)
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local servers = {
@@ -58,7 +58,7 @@ local servers = {
 	"yamlls",
 	"astro",
 }
-mason_lspconfig.setup({
+require("mason-lspconfig").setup({
 	ensure_installed = servers,
 	automatic_installation = true,
 })
