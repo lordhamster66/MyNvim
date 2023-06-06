@@ -69,7 +69,7 @@ local disableFormattingServers = {
 
 M.on_attach = function(client, bufnr)
 	if disableFormattingServers[client.name] then
-		client.server_capabilities.documentFormattingProvider = false
+		client.server_capabilities.documentFormattingProvider = false -- use null-ls formatting instead
 	end
 	lsp_keymaps(bufnr)
 end
