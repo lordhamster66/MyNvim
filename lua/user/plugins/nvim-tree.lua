@@ -131,7 +131,7 @@ nvimtree.setup({
 	},
 	diagnostics = { enable = false },
 	view = {
-		-- adaptive_size = true,
+		adaptive_size = true,
 		centralize_selection = true,
 		preserve_window_proportions = true,
 		-- number=true,
