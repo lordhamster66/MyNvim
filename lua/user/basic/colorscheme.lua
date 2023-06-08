@@ -42,8 +42,10 @@ catppuccin.setup({
 		gitsigns = true,
 		nvimtree = true,
 		telescope = true,
-		notify = false,
-		mini = false,
+		treesitter = true,
+		treesitter_context = true,
+        which_key = true,
+		leap = true,
 		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 	},
 })
