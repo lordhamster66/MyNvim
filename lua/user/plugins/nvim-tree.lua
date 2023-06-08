@@ -4,9 +4,20 @@ if not status then
 	return
 end
 
+-- remove winbar from nvim tree
+local api_status, api = pcall(require, "nvim-tree.api")
+if api_status then
+	require("nvim-tree.api").events.subscribe(api.events.Event.TreeOpen, function()
+		vim.opt.winbar = " "
+	end)
+end
+
 -- recommended settings from nvim-tree documentation
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
 
 -- change color for arrows in tree to light blue
 vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
@@ -122,31 +133,31 @@ nvimtree.setup({
 	view = {
 		-- adaptive_size = true,
 		centralize_selection = true,
-		-- preserve_window_proportions = true,
+		preserve_window_proportions = true,
 		-- number=true,
 		-- relativenumber=true,
-		float = {
-			enable = true,
-			-- quit_on_focus_loss = true,
-			open_win_config = {
-				relative = "editor",
-				border = "rounded",
-				width = width,
-				height = height,
-				row = (gheight - height) * 0.5,
-				col = (gwidth - width) * 0.5,
-			},
-		},
+		-- float = {
+		-- 	enable = true,
+		-- 	-- quit_on_focus_loss = true,
+		-- 	open_win_config = {
+		-- 		relative = "editor",
+		-- 		border = "rounded",
+		-- 		width = width,
+		-- 		height = height,
+		-- 		row = (gheight - height) * 0.5,
+		-- 		col = (gwidth - width) * 0.5,
+		-- 	},
+		-- },
 	},
 	-- disable window_picker for
 	-- explorer to work well with
 	-- window splits
-	actions = {
-		open_file = {
-			quit_on_open = true,
-			window_picker = {
-				enable = false,
-			},
-		},
-	},
+	-- actions = {
+	-- 	open_file = {
+	-- 		quit_on_open = true,
+	-- 		window_picker = {
+	-- 			enable = false,
+	-- 		},
+	-- 	},
+	-- },
 })
