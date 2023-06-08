@@ -38,13 +38,14 @@ catppuccin.setup({
 	color_overrides = {},
 	custom_highlights = {},
 	integrations = {
+		mason = true,
 		cmp = true,
 		gitsigns = true,
 		nvimtree = true,
 		telescope = true,
 		treesitter = true,
 		treesitter_context = true,
-        which_key = true,
+		which_key = true,
 		leap = true,
 		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 	},
