@@ -5,12 +5,10 @@ if not status then
 end
 
 -- remove winbar from nvim tree
-local api_status, api = pcall(require, "nvim-tree.api")
-if api_status then
-	require("nvim-tree.api").events.subscribe(api.events.Event.TreeOpen, function()
-		vim.opt.winbar = " "
-	end)
-end
+local api = require("nvim-tree.api")
+api.events.subscribe(api.events.Event.TreeOpen, function()
+	vim.opt.winbar = " "
+end)
 
 -- recommended settings from nvim-tree documentation
 vim.g.loaded = 1
