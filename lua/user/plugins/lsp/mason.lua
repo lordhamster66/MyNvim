@@ -39,6 +39,7 @@ require("mason").setup(settings)
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local servers = {
+	"clangd",
 	-- python
 	"pyright",
 	-- lua
@@ -49,8 +50,9 @@ local servers = {
 	-- css
 	"cssls",
 	"tailwindcss",
-	-- angular
+	-- typescript
 	"tsserver",
+	-- angular
 	"angularls",
 	-- other
 	"bashls",
