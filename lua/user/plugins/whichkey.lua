@@ -88,6 +88,10 @@ local mappings = {
 	["o"] = { "<cmd>Lspsaga outline<CR>", "Outline" },
 	["x"] = { "<cmd>:Bdelete!<CR>", "Close Buffer" },
 
+	t = {
+		name = "Tab",
+		n = { "<cmd>tabnew<CR>", "New tab!" },
+	},
 	b = {
 		name = "Buffer",
 		b = { "<cmd>%bd|e#|bd#<CR>", "Close all buffer except this one!" },
@@ -98,7 +102,7 @@ local mappings = {
 	},
 	f = {
 		name = "File",
-        t = { "<cmd>NvimTreeToggle<cr>", "Toggle Explorer" },
+		t = { "<cmd>NvimTreeToggle<cr>", "Toggle Explorer" },
 		f = {
 			"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{winblend = 10})<cr>",
 			"Find file",
