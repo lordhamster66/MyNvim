@@ -25,5 +25,6 @@ bufferline.setup({
 			delay = 200,
 			reveal = { "close" },
 		},
+		sort_by = "insert_at_end",
 	},
 })
