@@ -86,12 +86,9 @@ local mappings = {
 	["q"] = { "<cmd>:qa<CR>", "Quit Nvim" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["o"] = { "<cmd>Lspsaga outline<CR>", "Outline" },
+	["t"] = { "<cmd>Lspsaga term_toggle<CR>", "Term Toggle" },
 	["x"] = { "<cmd>:Bdelete!<CR>", "Close Buffer" },
 
-	t = {
-		name = "Tab",
-		n = { "<cmd>tabnew<CR>", "New tab!" },
-	},
 	b = {
 		name = "Buffer",
 		b = { "<cmd>%bd|e#|bd#<CR>", "Close all buffer except this one!" },
