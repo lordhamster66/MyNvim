@@ -5,6 +5,9 @@ if not saga_status then
 end
 
 saga.setup({
+	ui = {
+		kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+	},
 	outline = {
 		keys = {
 			expand_or_jump = "l",
