@@ -48,17 +48,6 @@ M.setup = function()
 	})
 end
 
-local function lsp_keymaps(bufnr)
-	local opts = { noremap = true, silent = true }
-	local keymap = vim.api.nvim_buf_set_keymap
-	keymap(bufnr, "n", "gf", "<cmd>Lspsaga finder<CR>", opts) -- show definition, references
-	keymap(bufnr, "n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts)
-	keymap(bufnr, "n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
-	keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	keymap(bufnr, "n", "go", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-end
-
 local disableFormattingServers = {
 	["tsserver"] = true,
 	["lua_ls"] = true,
@@ -71,7 +60,6 @@ M.on_attach = function(client, bufnr)
 	if disableFormattingServers[client.name] then
 		client.server_capabilities.documentFormattingProvider = false -- use null-ls formatting instead
 	end
-	lsp_keymaps(bufnr)
 end
 
 return M

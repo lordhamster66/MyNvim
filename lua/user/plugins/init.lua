@@ -10,7 +10,9 @@ require("user.plugins.bufferline")
 require("user.plugins.lualine")
 require("user.plugins.comment")
 require("user.plugins.gitsigns")
-require("user.plugins.whichkey")
 require("user.plugins.colorizer")
 require("user.plugins.indent-blankline")
 require("user.plugins.leap")
+
+-- put this at the end
+require("user.plugins.whichkey")
