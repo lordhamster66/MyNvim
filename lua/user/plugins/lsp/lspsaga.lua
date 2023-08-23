@@ -4,6 +4,7 @@ if not saga_status then
 	return
 end
 
+-- https://nvimdev.github.io/lspsaga/
 saga.setup({
 	ui = {
 		kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),

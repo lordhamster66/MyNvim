@@ -18,7 +18,7 @@ bufferline.setup({
 		offsets = { { filetype = "NvimTree", text = "File Explorer", text_align = "center", separator = true } },
 		show_buffer_icons = true,
 		show_tab_indicators = true,
-		persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
+		persist_buffer_sort = false, -- whether or not custom sorted buffers should persist
 		always_show_bufferline = true,
 		hover = {
 			enabled = true,
